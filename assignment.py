@@ -59,10 +59,11 @@ print(result)
 for i in result:
     print(i)
 """
-print('vet database accsested what will you do\nacses record 1, add new record 2:')
-go=input('')
+
 cog=True
 while cog==True:
+    print('vet database accsested what will you do\nacses record 1, add new record 2:')
+    go=input('')
     if go=='1':
         col=True
         while col==True:
