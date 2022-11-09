@@ -62,7 +62,7 @@ for i in result:
 
 cog=True
 while cog==True:
-    print('vet database accsested what will you do\nacses record 1, add new record 2:')
+    print('vet database accsested what will you do\naccess record 1, add new record 2:')
     go=input('')
     if go=='1':
         col=True
@@ -74,31 +74,40 @@ while cog==True:
                 query = f"select * from customers where email = '{em}'"
                 cursor.execute(query)
                 result = cursor.fetchall()
-                print(result)
+                if result==[]:
+                    print('no data')
+                else:
+                    print(result)
             if fi=='2':
                 i=input('enter id:')
                 query = f"select * from customers where id = {i}"
                 cursor.execute(query)
                 result = cursor.fetchall()
-                print(result)
+                if result==[]:
+                    print('no data')
+                else:
+                    print(result)
             if fi=='3':
                 pn=input('enter phone number:')
                 query = f"select * from customers where ownerphonenumber = {pn}"
                 cursor.execute(query)
                 result = cursor.fetchall()
-                print(result)
+                if result==[]:
+                    print('no data')
+                else:
+                    print(result)
             cof=True
             while cof==True:
-                y=input('continue to acses records(y/n)')
+                y=input('continue to access records(y/n)')
                 if y=='n':
                     cof=False
                     col=False
                 if y=='y':
                     cof=False
                 elif y!='n':
-                    print('enter valid number')
+                    print('enter valid input')
 
-    #"""
+#"""
     if go=='2':
         col=True
         while col==True:
@@ -115,14 +124,14 @@ while cog==True:
             connection.commit()
             cof=True
             while cof==True:
-                y=input('continue to acses records(y/n)')
+                y=input('continue to change records(y/n)')
                 if y=='n':
                     cof=False
                     col=False
                 if y=='y':
                     cof=False
                 elif y!='n':
-                    print('enter valid number')
+                    print('enter valid input')
     elif go!='1':
         print('enter valid number')
     cof=True
@@ -134,4 +143,5 @@ while cog==True:
         if y=='y':
             cof=False
         elif y!='n':
-            print('enter valid number')
+            print('enter valid input')
+#"""
